@@ -8,5 +8,43 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <RelativePanel>
+            <Button x:Name="hamburgerButton" RelativePanel.AlignLeftWithPanel="True" Click="hamburgerButton_Click" FontFamily="Segoe MDL2 Assets" FontSize="20" Height="45" Width="45" Content="&#xE700;"/>
+            <Button x:Name="backButton" RelativePanel.RightOf="hamburgerButton" Click="backButton_Click" FontFamily="Segoe MDL2 Assets" FontSize="20" Height="45" Width="45" Content="&#xE0A6;"/>
+            <AutoSuggestBox x:Name="searchAutoSuggestBox" RelativePanel.AlignRightWithPanel="True"
+                            PlaceholderText="Search for sounds" Width="200" QueryIcon="Find" TextChanged="searchAutoSuggestBox_TextChanged" QuerySubmitted="searchAutoSuggestBox_QuerySubmitted"/>
+        </RelativePanel>
+
+        <SplitView x:Name="mySplitView" DisplayMode="CompactOverlay" CompactPaneLength="45" OpenPaneLength="200">
+            <SplitView.Pane>
+                <ListView x:Name="menuItemsListView" IsItemClickEnabled="True" ItemClick="menuItemsListView_ItemClick"/>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <MediaElement x:Name="myMediaElement" AutoPlay="True"/>
+
+                    <TextBlock x:Name="categoryTextBlock" Text="All Sounds" FontSize="24"/>
+
+                    <GridView x:Name="soundGridView" Grid.Row="1" SelectionMode="None" IsItemClickEnabled="True" ItemClick="soundGridView_ItemClick">
+                        <GridView.ItemTemplate>
+                            <DataTemplate>
+                                <Image x:Name="myImage" Height="112" Width="101"/>
+                            </DataTemplate>
+                        </GridView.ItemTemplate>
+                    </GridView>
+                </Grid>
+            </SplitView.Content>
+        </SplitView>
+    </Grid>
 </Page>

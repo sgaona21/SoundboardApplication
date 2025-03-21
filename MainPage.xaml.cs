@@ -26,5 +26,35 @@ namespace SoundboardApplication
         {
             this.InitializeComponent();
         }
+
+        private void hamburgerButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void backButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchAutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+
+        }
+
+        private void searchAutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
+        {
+
+        }
+
+        private void menuItemsListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void soundGridView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }
