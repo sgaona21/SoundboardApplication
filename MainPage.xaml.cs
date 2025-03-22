@@ -1,5 +1,7 @@
-﻿using System;
+﻿using SoundboardApplication.Model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -22,14 +24,26 @@ namespace SoundboardApplication
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private ObservableCollection<Sound> Sounds;
+
+        private List<MenuItem> MenuItems;
+
         public MainPage()
         {
             this.InitializeComponent();
+            Sounds = new ObservableCollection<Sound>();
+            SoundManager.GetAllSounds(Sounds);
+
+            MenuItems = new List<MenuItem>();
+            MenuItems.Add(new MenuItem { IconFile = "Assets/Icons/animals.png", Category = SoundCategory.Animals });
+            MenuItems.Add(new MenuItem { IconFile = "Assets/Icons/cartoon.png", Category = SoundCategory.Cartoons });
+            MenuItems.Add(new MenuItem { IconFile = "Assets/Icons/taunt.png", Category = SoundCategory.Taunts });
+            MenuItems.Add(new MenuItem { IconFile = "Assets/Icons/warning.png", Category = SoundCategory.Warnings });
         }
 
         private void hamburgerButton_Click(object sender, RoutedEventArgs e)
         {
-
+            mySplitView.IsPaneOpen = !mySplitView.IsPaneOpen;
         }
 
         private void backButton_Click(object sender, RoutedEventArgs e)

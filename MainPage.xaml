@@ -5,6 +5,7 @@
     xmlns:local="using:SoundboardApplication"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:SoundboardApplication.Model"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -21,9 +22,20 @@
                             PlaceholderText="Search for sounds" Width="200" QueryIcon="Find" TextChanged="searchAutoSuggestBox_TextChanged" QuerySubmitted="searchAutoSuggestBox_QuerySubmitted"/>
         </RelativePanel>
 
-        <SplitView x:Name="mySplitView" DisplayMode="CompactOverlay" CompactPaneLength="45" OpenPaneLength="200">
+        <SplitView x:Name="mySplitView" Grid.Row="1" DisplayMode="CompactOverlay" CompactPaneLength="45" OpenPaneLength="200">
             <SplitView.Pane>
-                <ListView x:Name="menuItemsListView" IsItemClickEnabled="True" ItemClick="menuItemsListView_ItemClick"/>
+                <ListView x:Name="menuItemsListView" IsItemClickEnabled="True" ItemClick="menuItemsListView_ItemClick" ItemsSource="{x:Bind MenuItems}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="data:MenuItem">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{x:Bind IconFile}" Height="45" Width="45"/>
+                                <TextBlock Text="{x:Bind Category}" FontSize="18" Margin="10,0,0,0"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    
+                    
+                </ListView>
             </SplitView.Pane>
             <SplitView.Content>
                 <Grid>
@@ -36,10 +48,10 @@
 
                     <TextBlock x:Name="categoryTextBlock" Text="All Sounds" FontSize="24"/>
 
-                    <GridView x:Name="soundGridView" Grid.Row="1" SelectionMode="None" IsItemClickEnabled="True" ItemClick="soundGridView_ItemClick">
+                    <GridView x:Name="soundGridView" Grid.Row="1" SelectionMode="None" IsItemClickEnabled="True" ItemClick="soundGridView_ItemClick" ItemsSource="{x:Bind Sounds}">
                         <GridView.ItemTemplate>
-                            <DataTemplate>
-                                <Image x:Name="myImage" Height="112" Width="101"/>
+                            <DataTemplate x:DataType="data:Sound">
+                                <Image x:Name="myImage" Height="112" Width="101" Source="{x:Bind ImageFile}"/>
                             </DataTemplate>
                         </GridView.ItemTemplate>
                     </GridView>
