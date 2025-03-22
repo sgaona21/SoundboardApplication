@@ -48,7 +48,7 @@
 
                     <TextBlock x:Name="categoryTextBlock" Text="All Sounds" FontSize="24"/>
 
-                    <GridView x:Name="soundGridView" Grid.Row="1" SelectionMode="None" IsItemClickEnabled="True" ItemClick="soundGridView_ItemClick" ItemsSource="{x:Bind Sounds}">
+                    <GridView x:Name="soundGridView" Grid.Row="1" SelectionMode="None" IsItemClickEnabled="True" ItemClick="soundGridView_ItemClick" ItemsSource="{x:Bind Sounds}" AllowDrop="True" Drop="soundGridView_Drop" DragOver="soundGridView_DragOver">
                         <GridView.ItemTemplate>
                             <DataTemplate x:DataType="data:Sound">
                                 <Image x:Name="myImage" Height="112" Width="101" Source="{x:Bind ImageFile}"/>
