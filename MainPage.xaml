@@ -28,8 +28,8 @@
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="data:MenuItem">
                             <StackPanel Orientation="Horizontal">
-                                <Image Source="{x:Bind IconFile}" Height="45" Width="45"/>
-                                <TextBlock Text="{x:Bind Category}" FontSize="18" Margin="10,0,0,0"/>
+                                <Image Source="{x:Bind IconFile}" Height="35" Width="35" Margin="-10,10,0,10"/>
+                                <TextBlock Text="{x:Bind Category}" FontSize="18" Margin="10,0,0,0" VerticalAlignment="Center"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
@@ -38,7 +38,7 @@
                 </ListView>
             </SplitView.Pane>
             <SplitView.Content>
-                <Grid>
+                <Grid Margin="20,20,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />

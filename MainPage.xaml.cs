@@ -39,6 +39,8 @@ namespace SoundboardApplication
             MenuItems.Add(new MenuItem { IconFile = "Assets/Icons/cartoon.png", Category = SoundCategory.Cartoons });
             MenuItems.Add(new MenuItem { IconFile = "Assets/Icons/taunt.png", Category = SoundCategory.Taunts });
             MenuItems.Add(new MenuItem { IconFile = "Assets/Icons/warning.png", Category = SoundCategory.Warnings });
+
+            backButton.Visibility = Visibility.Collapsed;
         }
 
         private void hamburgerButton_Click(object sender, RoutedEventArgs e)
@@ -48,7 +50,10 @@ namespace SoundboardApplication
 
         private void backButton_Click(object sender, RoutedEventArgs e)
         {
-
+            SoundManager.GetAllSounds(Sounds);
+            categoryTextBlock.Text = "All Sounds";
+            menuItemsListView.SelectedItem = null;
+            backButton.Visibility = Visibility.Collapsed;
         }
 
         private void searchAutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
@@ -63,12 +68,18 @@ namespace SoundboardApplication
 
         private void menuItemsListView_ItemClick(object sender, ItemClickEventArgs e)
         {
+            var menuItem = (MenuItem)e.ClickedItem;
 
+            // Filter on category
+            categoryTextBlock.Text = menuItem.Category.ToString();
+            SoundManager.GetSoundsByCategory(Sounds, menuItem.Category);
+            backButton.Visibility = Visibility.Visible;
         }
 
         private void soundGridView_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            var sound = (Sound)e.ClickedItem;
+            myMediaElement.Source = new Uri(this.BaseUri, sound.AudioFile);
         }
     }
 }
