@@ -60,7 +60,10 @@ namespace SoundboardApplication
             if (String.IsNullOrEmpty(sender.Text)) goBack();
 
             SoundManager.GetAllSounds(Sounds);
-            Suggestions = Sounds.Where(p => p.Name.StartsWith(sender.Text)).Select(p => p.Name).ToList();
+            Suggestions = Sounds
+                .Where(p => p.Name.StartsWith(sender.Text))
+                .Select(p => p.Name)
+                .ToList();
             searchAutoSuggestBox.ItemsSource = Suggestions;
         }
 

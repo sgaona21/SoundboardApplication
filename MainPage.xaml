@@ -19,7 +19,7 @@
             <Button x:Name="hamburgerButton" RelativePanel.AlignLeftWithPanel="True" Click="hamburgerButton_Click" FontFamily="Segoe MDL2 Assets" FontSize="20" Height="45" Width="45" Content="&#xE700;"/>
             <Button x:Name="backButton" RelativePanel.RightOf="hamburgerButton" Click="backButton_Click" FontFamily="Segoe MDL2 Assets" FontSize="20" Height="45" Width="45" Content="&#xE0A6;"/>
             <AutoSuggestBox x:Name="searchAutoSuggestBox" RelativePanel.AlignRightWithPanel="True"
-                            PlaceholderText="Search for sounds" Width="200" QueryIcon="Find" TextChanged="searchAutoSuggestBox_TextChanged" QuerySubmitted="searchAutoSuggestBox_QuerySubmitted"/>
+                            PlaceholderText="Search for sounds" Width="200" QueryIcon="Find" Margin="0,5,10,0" TextChanged="searchAutoSuggestBox_TextChanged" QuerySubmitted="searchAutoSuggestBox_QuerySubmitted"/>
         </RelativePanel>
 
         <SplitView x:Name="mySplitView" Grid.Row="1" DisplayMode="CompactOverlay" CompactPaneLength="45" OpenPaneLength="200">
