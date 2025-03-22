@@ -27,7 +27,7 @@ namespace SoundboardApplication
     public sealed partial class MainPage : Page
     {
         private ObservableCollection<Sound> Sounds;
-
+        private List<String> Suggestions;
         private List<MenuItem> MenuItems;
 
         public MainPage()
@@ -52,20 +52,32 @@ namespace SoundboardApplication
 
         private void backButton_Click(object sender, RoutedEventArgs e)
         {
+            goBack();
+        }
+
+        private void searchAutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            if (String.IsNullOrEmpty(sender.Text)) goBack();
+
+            SoundManager.GetAllSounds(Sounds);
+            Suggestions = Sounds.Where(p => p.Name.StartsWith(sender.Text)).Select(p => p.Name).ToList();
+            searchAutoSuggestBox.ItemsSource = Suggestions;
+        }
+
+        private void goBack()
+        {
             SoundManager.GetAllSounds(Sounds);
             categoryTextBlock.Text = "All Sounds";
             menuItemsListView.SelectedItem = null;
             backButton.Visibility = Visibility.Collapsed;
         }
 
-        private void searchAutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
-        {
-
-        }
-
         private void searchAutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
         {
-
+            SoundManager.GetSoundsByName(Sounds, sender.Text);
+            categoryTextBlock.Text = sender.Text;
+            menuItemsListView.SelectedItem = null;
+            backButton.Visibility = Visibility.Visible;
         }
 
         private void menuItemsListView_ItemClick(object sender, ItemClickEventArgs e)
