@@ -27,7 +27,8 @@ namespace SoundboardApplication.Model
         Animals,
         Cartoons,
         Taunts,
-        Warnings
+        Warnings,
+        Windows
     }
 
 }

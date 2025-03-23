@@ -48,6 +48,9 @@ namespace SoundboardApplication.Model
             sounds.Add(new Sound("Ship", SoundCategory.Warnings));
             sounds.Add(new Sound("Siren", SoundCategory.Warnings));
 
+            sounds.Add(new Sound("WindowsXP", SoundCategory.Windows));
+            sounds.Add(new Sound("WindowsVista", SoundCategory.Windows));
+
             return sounds;
         }
     }

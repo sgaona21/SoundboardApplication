@@ -141,7 +141,7 @@
     <Content Include="Assets\Audio\Taunts\LOL.wav" />
     <Content Include="Assets\Audio\Warnings\Ship.wav" />
     <Content Include="Assets\Audio\Warnings\Siren.wav" />
-    <Content Include="Assets\Audio\Windows\windowsVistaStartup.wav" />
+    <Content Include="Assets\Audio\Windows\windowsVista.wav" />
     <Content Include="Assets\Audio\Windows\windowsXP.wav" />
     <Content Include="Assets\Icons\animals.png" />
     <Content Include="Assets\Icons\cartoon.png" />

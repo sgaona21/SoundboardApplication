@@ -41,6 +41,7 @@ namespace SoundboardApplication
             MenuItems.Add(new MenuItem { IconFile = "Assets/Icons/cartoon.png", Category = SoundCategory.Cartoons });
             MenuItems.Add(new MenuItem { IconFile = "Assets/Icons/taunt.png", Category = SoundCategory.Taunts });
             MenuItems.Add(new MenuItem { IconFile = "Assets/Icons/warning.png", Category = SoundCategory.Warnings });
+            MenuItems.Add(new MenuItem { IconFile = "Assets/Icons/windows.png", Category = SoundCategory.Windows });
 
             backButton.Visibility = Visibility.Collapsed;
         }

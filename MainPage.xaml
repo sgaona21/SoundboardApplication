@@ -24,12 +24,12 @@
 
         <SplitView x:Name="mySplitView" Grid.Row="1" DisplayMode="CompactOverlay" CompactPaneLength="45" OpenPaneLength="200">
             <SplitView.Pane>
-                <ListView x:Name="menuItemsListView" IsItemClickEnabled="True" ItemClick="menuItemsListView_ItemClick" ItemsSource="{x:Bind MenuItems}">
+                <ListView x:Name="menuItemsListView" IsItemClickEnabled="True" ItemClick="menuItemsListView_ItemClick" ItemsSource="{x:Bind MenuItems}" Background="Aqua">
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="data:MenuItem">
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="{x:Bind IconFile}" Height="35" Width="35" Margin="-10,10,0,10"/>
-                                <TextBlock Text="{x:Bind Category}" FontSize="18" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Bind Category}" FontSize="18" Margin="10,0,0,0" VerticalAlignment="Center" Foreground="Black"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
