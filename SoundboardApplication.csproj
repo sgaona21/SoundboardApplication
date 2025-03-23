@@ -141,10 +141,13 @@
     <Content Include="Assets\Audio\Taunts\LOL.wav" />
     <Content Include="Assets\Audio\Warnings\Ship.wav" />
     <Content Include="Assets\Audio\Warnings\Siren.wav" />
+    <Content Include="Assets\Audio\Windows\windowsVistaStartup.wav" />
+    <Content Include="Assets\Audio\Windows\windowsXP.wav" />
     <Content Include="Assets\Icons\animals.png" />
     <Content Include="Assets\Icons\cartoon.png" />
     <Content Include="Assets\Icons\taunt.png" />
     <Content Include="Assets\Icons\warning.png" />
+    <Content Include="Assets\Icons\windows.png" />
     <Content Include="Assets\Images\Animals\Cat.png" />
     <Content Include="Assets\Images\Animals\Cow.png" />
     <Content Include="Assets\Images\Cartoons\Gun.png" />
@@ -153,6 +156,8 @@
     <Content Include="Assets\Images\Taunts\LOL.png" />
     <Content Include="Assets\Images\Warnings\Ship.png" />
     <Content Include="Assets\Images\Warnings\Siren.png" />
+    <Content Include="Assets\Images\Windows\windowsVista.png" />
+    <Content Include="Assets\Images\Windows\windowsXP.png" />
     <Content Include="Assets\PackageAppXManifest\1240x1240.png" />
     <Content Include="Assets\PackageAppXManifest\1240x600.png" />
     <Content Include="Assets\PackageAppXManifest\24x24-large.png" />
